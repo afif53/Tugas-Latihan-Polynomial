@@ -1,0 +1,158 @@
+>> % Definisikan nilai x yang akan dievaluasi
+x = 2;
+
+% Definisikan koefisien setiap polinomial sebagai vektor
+% Koefisien harus diurutkan dari pangkat tertinggi ke terendah,
+% termasuk koefisien nol jika ada.
+
+% p1(x) = x^6 + 2x^4 - 3x^3 + 7x^2 - 8x + 7
+% Pangkat tertinggi adalah 6. Koefisien x^5 adalah 0.
+p1_coeffs = [1, 0, 2, -3, 7, -8, 7];
+
+% p2(x) = x^4 + 3x^3 - 5x^2 + 9x + 11
+p2_coeffs = [1, 3, -5, 9, 11];
+
+% p3(x) = x^3 - 2x^2 - 3x + 9
+p3_coeffs = [1, -2, -3, 9];
+
+% p4(x) = x^2 - 5x + 13
+p4_coeffs = [1, -5, 13];
+
+% p5(x) = x + 5
+p5_coeffs = [1, 5];
+
+% Hitung nilai polinomial pada x = 2 menggunakan fungsi polyval()
+disp('--- Hasil Evaluasi Polinomial pada x = 2 ---');
+
+% Hitung p1(2)
+p1_value = polyval(p1_coeffs, x);
+fprintf('p1(%d) = %.4f\n', x, p1_value);
+
+% Hitung p2(2)
+p2_value = polyval(p2_coeffs, x);
+fprintf('p2(%d) = %.4f\n', x, p2_value);
+
+% Hitung p3(2)
+p3_value = polyval(p3_coeffs, x);
+fprintf('p3(%d) = %.4f\n', x, p3_value);
+
+% Hitung p4(2)
+p4_value = polyval(p4_coeffs, x);
+fprintf('p4(%d) = %.4f\n', x, p4_value);
+
+% Hitung p5(2)
+p5_value = polyval(p5_coeffs, x);
+fprintf('p5(%d) = %.4f\n', x, p5_value);
+--- Hasil Evaluasi Polinomial pada x = 2 ---
+p1(2) = 91.0000
+p2(2) = 49.0000
+p3(2) = 3.0000
+p4(2) = 7.0000
+p5(2) = 7.0000
+>> % Definisikan koefisien setiap polinomial
+% (a) p1(x) = x^7 + 8x^6 + 5x^5 + 4x^4 + 3x^3 + 2x^2 + x + 1
+p1_coeffs = [1, 8, 5, 4, 3, 2, 1, 1];
+
+% (b) p2(x) = x^6 - 7x^5 + 7x^4 + 15x^4 - 10x^3 - 8x^2 + 7x + 15
+% Perhatikan ada dua suku x^4. Seharusnya digabungkan: 7x^4 + 15x^4 = 22x^4
+% Asumsi: p2(x) = x^6 - 7x^5 + 22x^4 - 10x^3 - 8x^2 + 7x + 15
+p2_coeffs = [1, -7, 22, -10, -8, 7, 15];
+
+% (c) p3(x) = x^5 - 13x^4 + 10x^3 + 12x^2 + 8x - 15
+p3_coeffs = [1, -13, 10, 12, 8, -15];
+
+% (d) p4(x) = x^4 + 7x^3 + 12x^2 - 25x + 8
+p4_coeffs = [1, 7, 12, -25, 8];
+
+% (e) p5(x) = x^4 + 15x^2 - 23x + 105
+% Koefisien x^3 adalah 0.
+p5_coeffs = [1, 0, 15, -23, 105];
+
+% (f) p6(x) = x^2 - 18x + 23
+p6_coeffs = [1, -18, 23];
+
+% (g) p7(x) = x + 7
+p7_coeffs = [1, 7];
+
+% Hitung akar-akar menggunakan fungsi roots()
+disp('--- Akar-akar Polinomial (Roots) ---');
+
+% Hitung akar p1(x)
+p1_roots = roots(p1_coeffs);
+disp('(a) Akar p1(x):');
+disp(p1_roots);
+
+% Hitung akar p2(x)
+p2_roots = roots(p2_coeffs);
+disp('(b) Akar p2(x):');
+disp(p2_roots);
+
+% Hitung akar p3(x)
+p3_roots = roots(p3_coeffs);
+disp('(c) Akar p3(x):');
+disp(p3_roots);
+
+% Hitung akar p4(x)
+p4_roots = roots(p4_coeffs);
+disp('(d) Akar p4(x):');
+disp(p4_roots);
+
+% Hitung akar p5(x)
+p5_roots = roots(p5_coeffs);
+disp('(e) Akar p5(x):');
+disp(p5_roots);
+
+% Hitung akar p6(x)
+p6_roots = roots(p6_coeffs);
+disp('(f) Akar p6(x):');
+disp(p6_roots);
+
+% Hitung akar p7(x)
+p7_roots = roots(p7_coeffs);
+disp('(g) Akar p7(x):');
+disp(p7_roots);
+--- Akar-akar Polinomial (Roots) ---
+(a) Akar p1(x):
+  -7.3898 + 0.0000i
+  -0.6570 + 0.3613i
+  -0.6570 - 0.3613i
+   0.4268 + 0.5473i
+   0.4268 - 0.5473i
+  -0.0749 + 0.7030i
+  -0.0749 - 0.7030i
+
+(b) Akar p2(x):
+   3.1577 + 2.8208i
+   3.1577 - 2.8208i
+   0.9463 + 0.7534i
+   0.9463 - 0.7534i
+  -0.6040 + 0.4550i
+  -0.6040 - 0.4550i
+
+(c) Akar p3(x):
+  12.0867 + 0.0000i
+  -0.7057 + 0.7061i
+  -0.7057 - 0.7061i
+   1.4875 + 0.0000i
+   0.8371 + 0.0000i
+
+(d) Akar p4(x):
+  -4.1331 + 2.2411i
+  -4.1331 - 2.2411i
+   0.8305 + 0.0000i
+   0.4358 + 0.0000i
+
+(e) Akar p5(x):
+  -1.3427 + 3.6858i
+  -1.3427 - 3.6858i
+   1.3427 + 2.2407i
+   1.3427 - 2.2407i
+
+(f) Akar p6(x):
+   16.6158
+    1.3842
+
+(g) Akar p7(x):
+    -7
+
+>> 
